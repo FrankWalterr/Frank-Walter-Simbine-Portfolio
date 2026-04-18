@@ -1474,6 +1474,10 @@ main {
   box-shadow: 0 10px 26px color-mix(in srgb, var(--accent) 42%, transparent);
 }
 
+.project-live-icon {
+  flex-shrink: 0;
+}
+
 @media (max-width: 900px) {
   .projects-grid {
     grid-template-columns: 1fr;

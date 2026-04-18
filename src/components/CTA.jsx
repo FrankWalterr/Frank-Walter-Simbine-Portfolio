@@ -25,7 +25,6 @@ export function CTA() {
           <p className="cta-text">{t('cta.text')}</p>
           <a href="#contacto" className="btn btn-primary btn-cta">
             <span>{t('cta.btn')}</span>
-            <Icon name="arrowRight" size={22} className="btn-arrow" />
           </a>
         </div>
       </div>
