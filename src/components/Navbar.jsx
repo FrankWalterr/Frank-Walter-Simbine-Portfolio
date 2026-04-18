@@ -41,13 +41,25 @@ export function Navbar({ activeSection }) {
               <span>{t(`nav.${id}`)}</span>
             </a>
           ))}
+
+          <div className="nav-mobile-controls" aria-label="Preferências">
+            <button type="button" className="nav-mobile-theme" onClick={toggleTheme} aria-label={t('a11y.toggleTheme')}>
+              <span className="nav-mobile-theme-icon"><Icon name={theme === 'dark' ? 'moon' : 'sun'} size={18} /></span>
+              <span>{theme === 'dark' ? 'Modo escuro' : 'Modo claro'}</span>
+            </button>
+            <button type="button" className="nav-mobile-lang" onClick={toggleLang} aria-label={t('a11y.toggleLang')}>
+              <span>PT</span>
+              <span className="nav-mobile-lang-divider" aria-hidden="true">|</span>
+              <span>EN</span>
+            </button>
+          </div>
         </nav>
         <div className="navbar-actions">
-          <button type="button" className="btn-icon btn-theme" onClick={toggleTheme} aria-label={t('a11y.toggleTheme')}>
+          <button type="button" className="btn-icon btn-theme btn-desktop-only" onClick={toggleTheme} aria-label={t('a11y.toggleTheme')}>
             <span className="icon-sun"><Icon name="sun" size={20}/></span>
             <span className="icon-moon"><Icon name="moon" size={20}/></span>
           </button>
-          <button type="button" className="btn-icon btn-lang" onClick={toggleLang} aria-label={t('a11y.toggleLang')}>PT | EN</button>
+          <button type="button" className="btn-icon btn-lang btn-desktop-only" onClick={toggleLang} aria-label={t('a11y.toggleLang')}>PT | EN</button>
           <button
             type="button"
             className="btn-mobile-toggle"

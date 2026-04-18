@@ -37,21 +37,32 @@ export function Projects() {
                     </div>
                   ) : null}
                   {previewImage ? (
-                    <a
-                      href={liveUrl || '#'}
-                      className="project-preview-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={liveLabel || name}
-                    >
-                      <img
-                        src={previewImage}
-                        alt={`Preview do projeto ${name}`}
-                        className="project-preview-img"
-                        loading="lazy"
-                        referrerPolicy="no-referrer"
-                      />
-                    </a>
+                    liveUrl ? (
+                      <a
+                        href={liveUrl}
+                        className="project-preview-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={liveLabel || name}
+                      >
+                        <img
+                          src={previewImage}
+                          alt={`Preview do projeto ${name}`}
+                          className="project-preview-img"
+                          loading="lazy"
+                          referrerPolicy="no-referrer"
+                        />
+                      </a>
+                    ) : (
+                      <div className="project-preview-link" aria-label={name}>
+                        <img
+                          src={previewImage}
+                          alt={`Preview do projeto ${name}`}
+                          className="project-preview-img"
+                          loading="lazy"
+                        />
+                      </div>
+                    )
                   ) : null}
                   <h3 className="project-title">{name}</h3>
                   <p className="project-desc">{desc}</p>

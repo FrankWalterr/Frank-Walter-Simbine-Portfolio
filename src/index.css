@@ -392,6 +392,10 @@ main {
   justify-self: flex-end;
 }
 
+.nav-mobile-controls {
+  display: none;
+}
+
 .btn-icon {
   background: transparent;
   border: 1px solid var(--border);
@@ -1276,6 +1280,12 @@ main {
 }
 
 .project-card.has-image {
+  /* cartões com imagem ficam lado a lado no desktop */
+  grid-column: auto;
+}
+
+.project-card.no-image {
+  /* cartão sem imagem ocupa a linha inteira */
   grid-column: 1 / -1;
   max-width: 760px;
   width: 100%;
@@ -2328,6 +2338,88 @@ main {
     visibility: visible;
   }
 
+  /* Painel mobile + alinhamento */
+  .navbar-menu {
+    border-radius: 0 0 18px 18px;
+  }
+
+  .nav-link {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.65rem 0.85rem;
+    margin: 0;
+    border-radius: 14px;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-link::before {
+    border-radius: 14px;
+  }
+
+  .navbar-actions {
+    gap: 0.25rem;
+  }
+
+  .btn-desktop-only {
+    display: none;
+  }
+
+  .nav-mobile-controls {
+    display: grid;
+  }
+
+  .btn-mobile-toggle {
+    margin-left: 0.25rem;
+  }
+
+  .nav-mobile-controls {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--navbar-border);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .nav-mobile-theme,
+  .nav-mobile-lang {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.75rem 0.9rem;
+    border-radius: 14px;
+    border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+    background: color-mix(in srgb, var(--accent-soft) 70%, transparent);
+    color: var(--text-primary);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .nav-mobile-theme:hover,
+  .nav-mobile-lang:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+    background: color-mix(in srgb, var(--accent-soft) 92%, transparent);
+  }
+
+  .nav-mobile-theme-icon {
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-mobile-lang-divider {
+    opacity: 0.6;
+  }
+
   .btn-mobile-toggle {
     display: flex;
   }
@@ -2335,6 +2427,21 @@ main {
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  /* “Olá, eu sou” visível no mobile */
+  .hero-greeting {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.65rem;
+    padding: 0.32rem 0.7rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--accent-soft) 70%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+    color: var(--accent);
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
   }
 
   .hero-intro {

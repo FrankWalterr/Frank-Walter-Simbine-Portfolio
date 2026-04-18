@@ -1,3 +1,5 @@
+import ucmFegPreview from '../assets/ucm-feg-preview.png'
+
 export const translations = {
   pt: {
     seo: { title: 'Frank Walter Simnbine', description: 'Frank Walter Simbine - Estudante de tecnologias de informação apaixonado por programação, web e IA. Portfólio com projetos, skills e contacto.' },
@@ -62,6 +64,7 @@ export const translations = {
       p2: {
         name: 'Plataforma estudantil UCM-FEG',
         desc: 'Plataforma web para organizar e centralizar a vida comunicacional e informativa da Associação dos Estudantes da UCM-FEG avisos, eventos, documentos e serviços num só lugar. Reduz a desorganização da informação estudantil e a dependência exclusiva de meios informais como redes sociais e murais, oferecendo acesso mais rápido e fiável a avisos, eventos e documentos da associação.',
+        previewImage: ucmFegPreview,
         tools: [
           { name: 'Blade Templates', icon: 'skill-html' },
           { name: 'JavaScript', icon: 'skill-js' },
@@ -168,6 +171,7 @@ export const translations = {
       p2: {
         name: 'UCM-FEG Student Association Platform',
         desc: 'Web platform to organise and centralise communication and information for the UCM-FEG Students Association — notices, events, documents and services in one place. Reduces scattered student information and over-reliance on informal channels such as social media and notice boards, enabling quicker, more reliable access to association updates and documents.',
+        previewImage: ucmFegPreview,
         tools: [
           { name: 'Blade Templates', icon: 'skill-html' },
           { name: 'JavaScript', icon: 'skill-js' },
