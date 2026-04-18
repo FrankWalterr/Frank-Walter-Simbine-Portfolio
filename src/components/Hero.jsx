@@ -1,6 +1,6 @@
 import { useApp } from '../context/AppContext'
 import { Icon } from './Icons'
-import profilePhoto from '../assets/foto1.png'
+import profilePhoto from '../assets/Foto1.png'
 import { config } from '../data/config'
 
 export function Hero() {
