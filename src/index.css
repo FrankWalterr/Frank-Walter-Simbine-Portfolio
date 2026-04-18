@@ -1455,21 +1455,23 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.5rem 0.85rem;
-  border-radius: 9px;
-  border: 1px solid var(--accent-soft);
-  background: color-mix(in srgb, var(--accent-soft) 70%, transparent);
-  color: var(--accent);
+  justify-content: center;
+  padding: 0.62rem 1rem;
+  border-radius: 11px;
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: #fff;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.9rem;
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--accent) 32%, transparent);
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-live-link:hover {
   transform: translateY(-1px);
-  background: color-mix(in srgb, var(--accent-soft) 100%, transparent);
-  border-color: var(--accent);
+  filter: brightness(1.05);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--accent) 42%, transparent);
 }
 
 @media (max-width: 900px) {
@@ -2313,6 +2315,24 @@ main {
 
 /* --- Responsivo --- */
 @media (max-width: 768px) {
+  .navbar-container {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 0.35rem;
+    padding: 0.65rem 0.45rem 0.65rem 1rem;
+  }
+
+  .navbar-logo {
+    min-width: 0;
+  }
+
+  .navbar-logo span {
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .navbar-menu {
     position: fixed;
     top: 56px;
@@ -2361,6 +2381,7 @@ main {
 
   .navbar-actions {
     gap: 0.25rem;
+    justify-self: end;
   }
 
   .btn-desktop-only {
@@ -2372,7 +2393,8 @@ main {
   }
 
   .btn-mobile-toggle {
-    margin-left: 0.25rem;
+    margin-left: 0;
+    padding: 0.5rem 0.35rem 0.5rem 0.5rem;
   }
 
   .nav-mobile-controls {
@@ -2422,6 +2444,13 @@ main {
 
   .btn-mobile-toggle {
     display: flex;
+  }
+
+  .project-live-link {
+    width: 100%;
+    padding: 0.78rem 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
   }
 
   .hero-content {
