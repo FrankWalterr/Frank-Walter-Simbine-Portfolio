@@ -1,6 +1,7 @@
 import { useApp } from '../context/AppContext'
 import { Icon } from './Icons'
 import { config } from '../data/config'
+import { TechBackdrop } from './TechBackdrop'
 
 export function Footer() {
   const { t, lang } = useApp()
@@ -8,6 +9,7 @@ export function Footer() {
 
   return (
     <footer className="footer">
+      <TechBackdrop variant="contact" />
       <div className="container footer-shell">
         <div className="footer-grid">
           <div className="footer-brand">
@@ -40,14 +42,18 @@ export function Footer() {
                 <span>{config.email}</span>
               </a>
             </div>
-
-            <div className="footer-social-wrap">
-              <h5 className="footer-social-title">{isPt ? 'Redes sociais' : 'Social media'}</h5>
-              <a href={config.links?.instagram} target="_blank" rel="noopener noreferrer" className="footer-social-handle">
-                <Icon name="instagram" size={16} />
-                <span>@frank_walter_9</span>
+            <div className="footer-social-links" aria-label={isPt ? 'Redes sociais' : 'Social media'}>
+              <a href={config.links?.github} target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="GitHub" data-tooltip="GitHub">
+                <Icon name="github" size={19} />
+              </a>
+              <a href={config.links?.linkedin} target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="LinkedIn" data-tooltip="LinkedIn">
+                <Icon name="linkedin" size={18} />
+              </a>
+              <a href={config.links?.instagram} target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Instagram" data-tooltip="Instagram">
+                <Icon name="instagram" size={19} />
               </a>
             </div>
+
           </div>
         </div>
 

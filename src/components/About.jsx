@@ -1,10 +1,13 @@
 import { useApp } from '../context/AppContext'
 import { Icon } from './Icons'
+import { TechBackdrop } from './TechBackdrop'
 
 export function About() {
   const { t } = useApp()
+
   return (
     <section id="sobre" className="section about">
+      <TechBackdrop variant="about" />
       <div className="container">
         <div className="about-header">
           <h2 className="section-title about-header-title">

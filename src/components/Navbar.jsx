@@ -3,11 +3,11 @@ import { useApp } from '../context/AppContext'
 import { Icon } from './Icons'
 
 const navItems = [
-  { id: 'inicio', href: '#inicio', icon: 'home' },
-  { id: 'sobre', href: '#sobre', icon: 'user' },
-  { id: 'skills', href: '#skills', icon: 'code' },
-  { id: 'projetos', href: '#projetos', icon: 'folder' },
-  { id: 'contacto', href: '#contacto', icon: 'mail' },
+  { id: 'inicio', href: '#inicio' },
+  { id: 'sobre', href: '#sobre' },
+  { id: 'skills', href: '#skills' },
+  { id: 'projetos', href: '#projetos' },
+  { id: 'contacto', href: '#contacto' },
 ]
 
 export function Navbar({ activeSection }) {
@@ -29,7 +29,7 @@ export function Navbar({ activeSection }) {
           <span>Frank Simbine</span>
         </a>
         <nav className="navbar-menu" id="navbar-menu" aria-label={t('a11y.navLabel')}>
-          {navItems.map(({ id, href, icon }) => (
+          {navItems.map(({ id, href }) => (
             <a
               key={id}
               href={href}
@@ -37,7 +37,6 @@ export function Navbar({ activeSection }) {
               data-section={id}
               onClick={(e) => handleNavClick(e, href)}
             >
-              <Icon name={icon} size={18} className="nav-icon"/>
               <span>{t(`nav.${id}`)}</span>
             </a>
           ))}

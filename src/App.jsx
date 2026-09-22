@@ -4,9 +4,11 @@ import { Hero } from './components/Hero'
 import { About } from './components/About'
 import { Skills } from './components/Skills'
 import { Projects } from './components/Projects'
+import { Certifications } from './components/Certifications'
 import { SeoHead } from './components/SeoHead'
 import { SkipLink } from './components/SkipLink'
 import { WhatsAppFloat } from './components/WhatsAppFloat'
+import { WelcomeModal } from './components/WelcomeModal'
 
 const CTA = lazy(() => import('./components/CTA').then(m => ({ default: m.CTA })))
 const Contact = lazy(() => import('./components/Contact').then(m => ({ default: m.Contact })))
@@ -68,6 +70,7 @@ export default function App() {
   return (
     <>
       <SeoHead />
+      <WelcomeModal />
       <SkipLink />
       <Navbar activeSection={activeSection} />
       <main id="main-content" tabIndex={-1}>
@@ -75,6 +78,7 @@ export default function App() {
         <About />
         <Skills />
         <Projects />
+        <Certifications />
         <Suspense fallback={null}>
           <CTA />
           <Contact />

@@ -1,10 +1,11 @@
 import { useApp } from '../context/AppContext'
-import { Icon } from './Icons'
+import { TechBackdrop } from './TechBackdrop'
 
 export function CTA() {
   const { t } = useApp()
   return (
     <section id="cta" className="section cta" aria-labelledby="cta-heading">
+      <TechBackdrop variant="contact" />
       <div className="cta-backdrop" aria-hidden="true">
         <div className="cta-grid-overlay" />
         <span className="cta-orb cta-orb-a" />
@@ -15,7 +16,6 @@ export function CTA() {
         <div className="cta-panel">
           <p className="cta-section-tagline">{t('cta.tagline')}</p>
           <p className="cta-badge">
-            <Icon name="sparkles" size={18} className="cta-badge-icon" aria-hidden="true" />
             <span>{t('cta.badge')}</span>
           </p>
           <h2 id="cta-heading" className="cta-title">

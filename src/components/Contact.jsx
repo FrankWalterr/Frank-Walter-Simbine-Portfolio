@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useApp } from '../context/AppContext'
 import { Icon } from './Icons'
 import { config } from '../data/config'
+import { TechBackdrop } from './TechBackdrop'
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -71,6 +72,7 @@ export function Contact() {
 
   return (
     <section id="contacto" className="section contact">
+      <TechBackdrop variant="contact" />
       <div className="container">
         <h2 className="section-title">
           <span className="section-title-icon"><Icon name="mail" size={28}/></span>
@@ -84,11 +86,11 @@ export function Contact() {
             <h3 className="contact-info-title">{t('contact.infoTitle')}</h3>
             <p className="contact-info-lead">{t('contact.infoLead')}</p>
             <ul className="contact-list">
-              <li><a href={'mailto:' + config.email}><span className="contact-icon"><Icon name="mail" size={20}/></span><span>{config.email}</span></a></li>
-              <li><a href={'tel:' + config.phone}><span className="contact-icon"><Icon name="phone" size={20}/></span><span>{config.phone}</span></a></li>
-              <li><a href={config.links?.github} target="_blank" rel="noopener noreferrer"><span className="contact-icon contact-icon-brand"><Icon name="github" size={20}/></span><span>GitHub</span></a></li>
-              <li><a href={config.links?.linkedin} target="_blank" rel="noopener noreferrer"><span className="contact-icon contact-icon-brand"><Icon name="linkedin" size={20}/></span><span>LinkedIn</span></a></li>
-              <li><a href={config.links?.instagram} target="_blank" rel="noopener noreferrer"><span className="contact-icon contact-icon-brand"><Icon name="instagram" size={20}/></span><span>Instagram</span></a></li>
+              <li><a href={'mailto:' + config.email}><span className="contact-icon"><Icon name="mail" size={16}/></span><span>{config.email}</span></a></li>
+              <li><a href={'tel:' + config.phone}><span className="contact-icon"><Icon name="phone" size={16}/></span><span>{config.phone}</span></a></li>
+              <li><a href={config.links?.github} target="_blank" rel="noopener noreferrer"><span className="contact-icon contact-icon-brand"><Icon name="github" size={16}/></span><span>GitHub</span></a></li>
+              <li><a href={config.links?.linkedin} target="_blank" rel="noopener noreferrer"><span className="contact-icon contact-icon-brand"><Icon name="linkedin" size={16}/></span><span>LinkedIn</span></a></li>
+              <li><a href={config.links?.instagram} target="_blank" rel="noopener noreferrer"><span className="contact-icon contact-icon-brand"><Icon name="instagram" size={16}/></span><span>Instagram</span></a></li>
             </ul>
           </div>
           <div className="contact-form-wrapper contact-panel">
@@ -110,7 +112,7 @@ export function Contact() {
             </div>
             <div className="form-group">
               <label htmlFor="message">{t('contact.form.message')}</label>
-              <textarea id="message" rows="4" value={form.message} onChange={handleChange} aria-invalid={!!errors.message}/>
+              <textarea id="message" rows="3" value={form.message} onChange={handleChange} aria-invalid={!!errors.message}/>
               {errors.message && <span className="form-error" id="error-message">{errors.message}</span>}
             </div>
             {feedback.msg && <p className={`form-feedback ${feedback.isError ? 'error' : 'success'}`} role="alert">{feedback.msg}</p>}
