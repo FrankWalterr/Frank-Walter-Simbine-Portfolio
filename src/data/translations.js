@@ -73,7 +73,7 @@ export const translations = {
         {
           title: 'Hacker Ético',
           issuer: 'Cisco Networking Academy',
-          date: 'Em andamento',
+          date: 'Em andamento — 70h',
           inProgress: true,
           url: '',
           tags: ['Ethical Hacking', 'Penetration Testing', 'Vulnerability Assessment']

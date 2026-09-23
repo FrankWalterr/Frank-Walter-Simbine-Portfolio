@@ -6,8 +6,7 @@ const AppContext = createContext(null)
 function getInitialTheme() {
   const stored = localStorage.getItem('portfolio-theme')
   if (stored) return stored
-  if (typeof window !== 'undefined' && window.matchMedia?.('(prefers-color-scheme: dark)')?.matches) return 'dark'
-  return 'light'
+  return 'dark'
 }
 
 export function AppProvider({ children }) {

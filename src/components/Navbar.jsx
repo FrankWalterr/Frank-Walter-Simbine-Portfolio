@@ -11,8 +11,10 @@ const navItems = [
 ]
 
 export function Navbar({ activeSection }) {
-  const { t, toggleTheme, toggleLang, theme } = useApp()
+  const { t, toggleTheme, toggleLang, theme, lang } = useApp()
   const [menuOpen, setMenuOpen] = useState(false)
+  const languageName = lang === 'pt' ? 'Português' : 'English'
+  const languageCode = lang === 'pt' ? 'PT' : 'EN'
 
   const handleNavClick = (e, href) => {
     if (href === '#') return
@@ -47,9 +49,8 @@ export function Navbar({ activeSection }) {
               <span>{theme === 'dark' ? 'Modo escuro' : 'Modo claro'}</span>
             </button>
             <button type="button" className="nav-mobile-lang" onClick={toggleLang} aria-label={t('a11y.toggleLang')}>
-              <span>PT</span>
-              <span className="nav-mobile-lang-divider" aria-hidden="true">|</span>
-              <span>EN</span>
+              <span className="nav-language-code">{languageCode}</span>
+              <span className="nav-language-name">{languageName}</span>
             </button>
           </div>
         </nav>
@@ -58,7 +59,10 @@ export function Navbar({ activeSection }) {
             <span className="icon-sun"><Icon name="sun" size={20}/></span>
             <span className="icon-moon"><Icon name="moon" size={20}/></span>
           </button>
-          <button type="button" className="btn-icon btn-lang btn-desktop-only" onClick={toggleLang} aria-label={t('a11y.toggleLang')}>PT | EN</button>
+          <button type="button" className="btn-icon btn-lang btn-desktop-only" onClick={toggleLang} aria-label={`${t('a11y.toggleLang')}: ${languageName}`}>
+            <span className="nav-language-code">{languageCode}</span>
+            <span className="nav-language-name">{languageName}</span>
+          </button>
           <button
             type="button"
             className="btn-mobile-toggle"
